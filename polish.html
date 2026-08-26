@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Portfolio</title>
+    <title>portfolio</title>
     <link rel="icon" href="icon.png">
     <style>
         html,
@@ -40,41 +40,41 @@
         <div id="myProjects">Moje projekty:</div>
         <div style="border-style: solid;">
             <div style="display: flex;justify-content: center;">
-                <div style="display: flex;justify-content: center;">AgeFinder</div>
+                <div style="display: flex;justify-content: center;">ageFinder</div>
                 <img src="calendar.png" style="width: 3%;margin-left: 5px;">
             </div>
             <div style="display: flex;margin-bottom: 25px;">
                 <div>Apka internetowa:</div>
-                <a href="https://mtkn573.github.io/AgeFinder/" target="_blank">https://mtkn573.github.io/AgeFinder/</a>
+                <a href="https://mtkn573.github.io/ageFinder/" target="_blank">https://mtkn573.github.io/ageFinder/</a>
             </div>
             <div style="display: flex;">
                 <div>Kod:</div>
-                <a href="https://github.com/Mtkn573/AgeFinder" target="_blank">
+                <a href="https://github.com/Mtkn573/ageFinder" target="_blank">
                     <img src="github.png" style="width: 3%;">
-                    https://github.com/Mtkn573/AgeFinder
+                    https://github.com/Mtkn573/ageFinder
                 </a>
             </div>
         </div>
         <div style="border-style: solid;">
             <div style="display: flex;justify-content: center;">
-                <div style="display: flex;justify-content: center;">Converter</div>
+                <div style="display: flex;justify-content: center;">converter</div>
                 <img src="converterIcon.png" style="width: 5%;margin-left: 5px;">
             </div>
             <div style="display: flex;margin-bottom: 25px;">
                 <div>Apka internetowa:</div>
-                <a href="https://mtkn573.github.io/Converter/" target="_blank">https://mtkn573.github.io/Converter/</a>
+                <a href="https://mtkn573.github.io/converter/" target="_blank">https://mtkn573.github.io/converter/</a>
             </div>
             <div style="display: flex;">
                 <div>Kod:</div>
-                <a href="https://github.com/Mtkn573/Converter" target="_blank">
+                <a href="https://github.com/Mtkn573/converter" target="_blank">
                     <img src="github.png" style="width: 3%;">
-                    https://github.com/Mtkn573/Converter
+                    https://github.com/Mtkn573/converter
                 </a>
             </div>
         </div>
         <div style="border-style: solid;">
             <div style="display: flex;justify-content: center;">
-                <div style="display: flex;justify-content: center;">Termometr</div>
+                <div style="display: flex;justify-content: center;">termometr</div>
                 <img src="termometr.png" style="width: 5%;margin-left: 5px;">
             </div>
             <div style="display: flex;">
@@ -88,14 +88,25 @@
         <img id="changeToEnglish" src="unitedStatesFlag.jpg" style="cursor: pointer;">
     </div>
     <div id="boxForCube" style="width: 50%;cursor:pointer"></div>
-    <script>
-        if (localStorage.getItem('language') === 'en') {
-            window.location.href = `index.html`
+    <script> 
+        isAndroid=/Android/i.test(navigator.userAgent)
+        if(!isAndroid){
+            document.body.innerHTML="korzystanie z apki chyba jest możliwe na urządzeniach z systemem android.<br><br>using app is i guess available on devices with android system."
+            document.body.style.fontSize="30px"
+            document.body.style.display="flex"
+            document.body.style.justifyContent="center"
+            document.body.style.alignItems="center"
+            document.body.style.width="100%"
+            document.body.style.height="100vh"
+        }else{
+            if (localStorage.getItem('language') === 'en') {
+                window.location.href = `index.html`
+            }
+            document.getElementById(`changeToEnglish`).addEventListener(`click`, function () {
+                localStorage.setItem('language', 'en')
+                window.location.href = `index.html`
+            })
         }
-        document.getElementById(`changeToEnglish`).addEventListener(`click`, function () {
-            localStorage.setItem('language', 'en')
-            window.location.href = `index.html`
-        })
     </script>
     <script type="importmap">
     {
